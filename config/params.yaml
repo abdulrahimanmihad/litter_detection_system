@@ -1,0 +1,7 @@
+# Hyperparameters for Litter Detection
+mosaic: 1.0      # Strong augmentation (mixes 4 images)
+mixup: 0.1       # Blends images
+degrees: 10.0    # Rotates images +/- 10 degrees
+fliplr: 0.5      # Flips left-right 50% of the time
+scale: 0.5       # Zooms in/out
+copy_paste: 0.1  # OPTIONAL: Helps if you have segmentation masks, safe to leave on

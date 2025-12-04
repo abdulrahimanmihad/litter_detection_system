@@ -1,0 +1,14 @@
+path: /home/miyad/litter_detection_system/data/processed
+train: images/train
+val: images/val
+test: images/test
+nc: 8
+names:
+- plastic
+- cigarette
+- metal
+- carton
+- paper
+- bio_waste
+- trash
+- Glass

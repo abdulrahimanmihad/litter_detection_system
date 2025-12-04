@@ -1,0 +1,5 @@
+outs:
+- md5: 8bb084c090c687263baeb77ac3a16436
+  size: 22505770
+  hash: md5
+  path: taco_v1.pt

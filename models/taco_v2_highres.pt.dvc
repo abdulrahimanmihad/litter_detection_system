@@ -1,0 +1,6 @@
+outs:
+- md5: 3bcf6c12cd40008d6bfefbb58848507e
+  size: 22532515
+  isexec: true
+  hash: md5
+  path: taco_v2_highres.pt

@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
@@ -5,10 +6,14 @@ from PIL import Image
 # 1. Page Configuration
 st.set_page_config(page_title="Litter Detection AI", page_icon="♻️")
 
+# Resolve the model path relative to this file so the app runs from any
+# working directory (e.g. `streamlit run src/app.py` or a systemd service).
+MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "best.pt")
+
 # 2. Load Model (with caching so it doesn't reload every time)
 @st.cache_resource
 def load_model():
-    return YOLO('best.pt')
+    return YOLO(MODEL_PATH)
 
 model = load_model()
 
@@ -27,7 +32,7 @@ if uploaded_file is not None:
     # 5. Run Detection Button
     if st.button('🔍 Detect Litter'):
         with st.spinner('Analyzing...'):
-            # Run inference with your OPTIMIZED confidence threshold
+            # Run inference with OPTIMIZED confidence threshold
             results = model.predict(image, conf=0.189)
             
             # Plot results on the image

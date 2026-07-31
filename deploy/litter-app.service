@@ -1,0 +1,19 @@
+[Unit]
+Description=Litter Detection Streamlit App
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/litter_detection_system
+# Bind to localhost only; nginx handles the public HTTPS side.
+ExecStart=/home/ubuntu/litter_detection_system/.venv/bin/streamlit run src/app.py \
+    --server.port 8501 \
+    --server.address 127.0.0.1 \
+    --server.headless true \
+    --browser.gatherUsageStats false
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -50,4 +50,4 @@ if uploaded_file is not None:
                 detected_classes = [model.names[int(cls)] for cls in cls_ids]
                 st.write("Found:", ", ".join(set(detected_classes)))
             else:
-                st.warning("No litter detected (try a lower confidence threshold if needed).")
+                st.warning("No litter detected in the image.")

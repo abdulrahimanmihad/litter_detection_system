@@ -1,8 +1,0 @@
-# Minimal dependencies to SERVE the Streamlit app on EC2.
-# Training/tracking tools (dvc, mlflow, scikit-learn, pandas) are intentionally
-# left out to keep the install small and fast on a low-RAM instance.
-#
-# Install CPU-only torch FIRST (see DEPLOY.md) so ultralytics does not pull the
-# multi-gigabyte CUDA build onto a CPU instance.
-ultralytics==8.3.233
-streamlit==1.39.0
